@@ -237,7 +237,7 @@ class Stickman{
 
 		glPopMatrix();
 	}
-
+//AOE block_start
 	void calc_AOE(){
 		up = y + 60*3;
 		down = y - 10*3;
@@ -256,7 +256,7 @@ class Stickman{
 	}
 
 	bool in_AOE(int x, int y){return (x<=right && x>=left && y<=up && y>=down);}
-
+//AOE block_end
 	void isHit(){
 		if(!isDead())
 			life--;
