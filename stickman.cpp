@@ -1,3 +1,4 @@
+#include <random>
 #include <iostream>
 #include <vector>
 #include <GL/glut.h>
@@ -286,7 +287,12 @@ float colors[][3] = {
     {0.5f, 0.0f, 0.5f}  // Purple
 };
 
-int col1=rand()%7, col2=rand()%7;
+std::random_device rd;
+std::mt19937 gen(rd());
+std::uniform_int_distribution<int> dist(0, 6);
+
+int col1 = dist(gen);
+int col2 = dist(gen);
 Stickman past(150, colors[col1], 1), future(750, colors[col2], -1);
 
 void firetimer(int){
