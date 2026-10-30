@@ -9,8 +9,7 @@ A two-player local stickman fighting game built with C++ and OpenGL (GLUT). Two 
 - **2 players** share the same keyboard
 - Each player has **7 HP**
 - Shoot fireballs at your opponent to drain their health
-- Last one standing wins — their stickman gets a crown and the loser is displayed as the "MURDERER"
-
+- Last one standing wins — their stickman gets a crown and the loser lays alone on the ground, bleeding to death (sad indeed)
 ---
 
 ## Controls
@@ -38,33 +37,34 @@ A two-player local stickman fighting game built with C++ and OpenGL (GLUT). Two 
 sudo apt install freeglut3-dev
 ```
 
-### Installing on Fedora/RHEL
-
-```bash
-sudo dnf install freeglut-devel
-```
-
 ### Installing on macOS (with Homebrew)
 
 ```bash
 brew install freeglut
 ```
+### Installing on windows
+
+Download from websites
 
 ---
 
 ## Building & Running
-
+On linux:
 ```bash
-g++ -o game game.cpp -lGL -lGLU -lglut
-./game
+g++ -o stickman stickman.cpp -lGL -lGLU -lglut
+./stickman
 ```
 
 On macOS:
 ```bash
-g++ -o game game.cpp -framework OpenGL -framework GLUT
-./game
+g++ -o stickman stickman.cpp -framework OpenGL -framework GLUT
+./stickman
 ```
-
+On windows:
+```bash
+g++ -o stickman.exe stickman.cpp -lfreeglut -lopengl32 -lglu32
+./stickman.exe
+```
 You'll be prompted to enter names for both players in the terminal before the window opens.
 
 ---
@@ -77,13 +77,13 @@ You'll be prompted to enter names for both players in the terminal before the wi
 - Fireballs travel across the screen and disappear on hit or leaving the window
 - Jump mechanic with auto-gravity (returns to ground after 200ms)
 - Win screen with crown animation on the victor
-- Loser screen showing the defeated stickman with a "MURDERER" label
+- Loser screen showing the defeated stickman with a "FATALITY" label
 - Draw condition if both players die simultaneously
 
 ---
 
-## Notes
+## Notes (not limitations)
 
-- The window size is fixed at **900×900**
-- Both players share the same machine — no network play
-- Player colors are randomized at startup but may occasionally be the same color (both players use `rand()` without a seed, so colors could match)
+- The window size is fixed at **900×900** (why would anyone want a different size?)
+- Both players share the same machine — no network play (encouraging in-person communication)
+- Player colors are randomized at startup but may occasionally be the same color (can be called destiny?)
