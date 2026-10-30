@@ -76,7 +76,7 @@ You'll be prompted to enter names for both players in the terminal before the wi
 - Player names rendered above their character
 - Fireballs travel across the screen and disappear on hit or leaving the window
 - Jump mechanic with auto-gravity (returns to ground after 200ms)
-- Win screen with crown animation on the victor
+- Winner's stickman displays a crown after the game ends
 - Loser screen showing the defeated stickman with a "FATALITY" label
 - Draw condition if both players die simultaneously
 
